@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body class="min-h-screen bg-gray-100">
+    <nav class="bg-blue-700 text-white p-4 shadow-lg fixed top-0 w-full z-20">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold font-serif">Teacher's Day Contest</h1>
+            <div class="space-x-6">
+                <a href="index.html" class="relative hover:text-yellow-300 transition-all duration-300 group font-serif">Home<span class="absolute bottom-0 left-0 w-0 h-1 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="profile.html" class="relative hover:text-yellow-300 transition-all duration-300 group font-serif">Profile<span class="absolute bottom-0 left-0 w-0 h-1 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="dashboard.html" class="relative hover:text-yellow-300 transition-all duration-300 group font-serif">Dashboard<span class="absolute bottom-0 left-0 w-0 h-1 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="contest.html" class="relative hover:text-yellow-300 transition-all duration-300 group font-serif">Contest<span class="absolute bottom-0 left-0 w-0 h-1 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span></a>
+                <button id="logoutBtn" class="hover:text-yellow-300 transition-all duration-300 font-serif">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto p-6 pt-24">
+        <div class="bg-white/90 backdrop-blur-md p-10 rounded-2xl shadow-2xl max-w-3xl mx-auto space-y-8 animate-fade-in">
+            <h2 class="text-4xl font-serif font-bold text-gray-800 mb-6 text-center">Feedback</h2>
+            <div class="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-4">Rate Your Experience</h3>
+                <div id="ratings" class="flex space-x-4">
+                    <button class="ratingBtn bg-gray-200 text-gray-800 py-2 px-4 rounded-lg hover:bg-green-500 hover:text-white transition-all duration-300 font-serif" data-rating="Good">Good</button>
+                    <button class="ratingBtn bg-gray-200 text-gray-800 py-2 px-4 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 font-serif" data-rating="Better">Better</button>
+                    <button class="ratingBtn bg-gray-200 text-gray-800 py-2 px-4 rounded-lg hover:bg-yellow-500 hover:text-white transition-all duration-300 font-serif" data-rating="Excellent">Excellent</button>
+                </div>
+                <textarea id="comment" placeholder="Your feedback..." class="w-full p-4 border border-gray-300 rounded-lg mt-4 focus:ring-2 focus:ring-blue-400 focus:border-transparent font-serif"></textarea>
+                <button id="submitFeedback" class="bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 transition-all duration-300 mt-4 font-serif">Submit Feedback</button>
+            </div>
+            <div class="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-4">All Feedback</h3>
+                <div id="feedbackList" class="space-y-4"></div>
+            </div>
+        </div>
+    </div>
+    <script src="feedback.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="min-h-screen bg-gray-100">
+    <nav class="bg-blue-700 text-white p-4 shadow-lg fixed top-0 w-full z-20">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold font-serif">Teacher's Day Contest</h1>
+            <div class="space-x-6">
+                <a href="index.html" class="relative hover:text-yellow-300 transition-all duration-300 group font-serif">Home<span class="absolute bottom-0 left-0 w-0 h-1 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span></a>
+                <button id="logoutBtn" class="hover:text-yellow-300 transition-all duration-300 font-serif">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto p-6 pt-24">
+        <div class="bg-white/90 backdrop-blur-md p-10 rounded-2xl shadow-2xl animate-fade-in">
+            <h2 class="text-4xl font-serif font-bold text-gray-800 mb-8 text-center">Admin Panel</h2>
+            <div class="space-y-8">
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-4">Set Prizes</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <input id="firstPrize" type="text" placeholder="1st Prize" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent font-serif">
+                        <input id="secondPrize" type="text" placeholder="2nd Prize" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent font-serif">
+                        <input id="thirdPrize" type="text" placeholder="3rd Prize" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent font-serif">
+                    </div>
+                    <button id="savePrizes" class="mt-6 bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 transition-all duration-300 font-serif">Save Prizes</button>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-4">Limit Entries</h3>
+                    <input id="entryLimit" type="number" placeholder="Max Users" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent font-serif">
+                    <button id="saveLimit" class="mt-6 bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 transition-all duration-300 font-serif">Set Limit</button>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-4">User List</h3>
+                    <table class="w-full table-auto">
+                        <thead>
+                            <tr class="bg-gray-200 text-gray-700">
+                                <th class="p-3 text-left font-serif">Name</th>
+                                <th class="p-3 text-left font-serif">Email</th>
+                                <th class="p-3 text-left font-serif">Score</th>
+                                <th class="p-3 text-left font-serif">Prize</th>
+                                <th class="p-3 text-left font-serif">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userList" class="divide-y divide-gray-200"></tbody>
+                    </table>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
+                    <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-4">User Feedback</h3>
+                    <div id="feedbackList" class="space-y-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

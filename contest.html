@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="contest.css">
+</head>
+<body class="min-h-screen bg-gray-100">
+    <nav class="bg-blue-700 text-white p-4 shadow-lg fixed top-0 w-full z-20">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold font-serif">Teacher's Day Contest</h1>
+            <div class="space-x-6">
+                <a href="index.html" class="relative hover:text-yellow-300 transition-all duration-300 group font-serif">Home<span class="absolute bottom-0 left-0 w-0 h-1 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="profile.html" class="relative hover:text-yellow-300 transition-all duration-300 group font-serif">Profile<span class="absolute bottom-0 left-0 w-0 h-1 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="dashboard.html" class="relative hover:text-yellow-300 transition-all duration-300 group font-serif">Dashboard<span class="absolute bottom-0 left-0 w-0 h-1 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="feedback.html" class="relative hover:text-yellow-300 transition-all duration-300 group font-serif">Feedback<span class="absolute bottom-0 left-0 w-0 h-1 bg-yellow-300 transition-all duration-300 group-hover:w-full"></span></a>
+                <button id="logoutBtn" class="hover:text-yellow-300 transition-all duration-300 font-serif">Logout</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto p-6 pt-24">
+        <div id="startScreen" class="text-center">
+            <h2 class="text-4xl font-serif font-bold text-gray-800 mb-8 animate-fade-in">Ready for the Contest, Teacher?</h2>
+            <button id="startContest" class="bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 transition-all duration-300 text-lg font-serif">Start Contest</button>
+        </div>
+        <div id="contestScreen" class="hidden bg-white/90 backdrop-blur-md p-10 rounded-2xl shadow-lg max-w-3xl mx-auto">
+            <h2 class="text-3xl font-serif font-bold text-gray-800 mb-6">Contest Question <span id="questionNumber"></span></h2>
+            <p id="timer" class="text-red-600 font-semibold text-xl font-serif mb-6"></p>
+            <p id="question" class="text-xl font-serif mb-8 animate-slide-up"></p>
+            <div id="options" class="space-y-4"></div>
+            <button id="submitAnswer" class="bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 transition-all duration-300 mt-8 font-serif">Submit</button>
+            <div id="result" class="mt-6 hidden text-xl font-serif font-semibold"></div>
+        </div>
+    </div>
+    <script src="contest.js"></script>
+</body>
+</html>
