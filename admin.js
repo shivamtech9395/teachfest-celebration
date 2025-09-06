@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const user = JSON.parse(localStorage.getItem('currentUser'));
     if (!user || user.userType !== 'shivam') {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     }
     const results = JSON.parse(localStorage.getItem('contestResults') || '{}');
     const users = JSON.parse(localStorage.getItem('users') || '[]');
