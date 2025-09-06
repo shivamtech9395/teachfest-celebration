@@ -7,36 +7,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="welcome.css">
 </head>
-<body class="min-h-screen bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500">
-    <nav class="bg-blue-700 text-white p-4 shadow-lg fixed top-0 w-full z-20">
+<body class="min-h-screen bg-gradient-to-tr from-pink-100 via-purple-100 to-indigo-100 animate-bg-pulse">
+    <nav class="bg-indigo-700 text-white p-4 shadow-2xl fixed top-0 w-full z-20">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold font-serif">Teacher's Day Contest</h1>
-            <div class="space-x-4">
-                <a href="index.html" class="hover:text-yellow-300 transition-all duration-300">Home</a>
-                <button id="logoutBtn" class="hover:text-yellow-300 transition-all duration-300 font-serif">Logout</button>
+            <h1 class="text-3xl font-serif font-extrabold tracking-tight">Teacher's Day Contest</h1>
+            <div class="space-x-6">
+                <a href="home.html" class="relative hover:text-pink-200 transition-all duration-300 group font-serif text-lg">Home<span class="absolute bottom-0 left-0 w-0 h-1 bg-pink-200 transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="profile.html" class="relative hover:text-pink-200 transition-all duration-300 group font-serif text-lg">Profile<span class="absolute bottom-0 left-0 w-0 h-1 bg-pink-200 transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="dashboard.html" class="relative hover:text-pink-200 transition-all duration-300 group font-serif text-lg">Dashboard<span class="absolute bottom-0 left-0 w-0 h-1 bg-pink-200 transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="contest.html" class="relative hover:text-pink-200 transition-all duration-300 group font-serif text-lg">Contest<span class="absolute bottom-0 left-0 w-0 h-1 bg-pink-200 transition-all duration-300 group-hover:w-full"></span></a>
+                <a href="feedback.html" class="relative hover:text-pink-200 transition-all duration-300 group font-serif text-lg">Feedback<span class="absolute bottom-0 left-0 w-0 h-1 bg-pink-200 transition-all duration-300 group-hover:w-full"></span></a>
+                <button id="logoutBtn" class="hover:text-pink-200 transition-all duration-300 font-serif text-lg">Logout</button>
             </div>
         </div>
     </nav>
-    <div class="container mx-auto p-6 pt-20 text-center">
-        <h1 class="text-5xl font-serif font-extrabold text-white mb-6 tracking-tight animate-pulse">Happy Teacher's Day!</h1>
-        <img src="download.png" alt="Namaste Teacher" class="mx-auto mb-8 rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-500">
-        <div class="space-y-8">
-            <div class="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <h2 class="text-2xl font-serif font-semibold text-gray-800 mb-4">Motivational Quote</h2>
-                <p id="quote" class="text-gray-600 text-lg italic font-serif"></p>
+    <div class="container mx-auto p-6 pt-24 space-y-12">
+        <div class="text-center animate-zoom-in">
+            <h1 class="text-7xl font-serif font-extrabold text-indigo-800 mb-4 tracking-tight">Happy Teacher's Day!</h1>
+            <span class="text-10xl animate-bounce-slow text-purple-600">🙏</span>
+            <p class="text-3xl font-serif text-purple-700 italic mt-4 animate-fade-in-delay">Guru ke bina jeevan adhoora, unka gyan hai sadaa anoopam.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="section-clickable bg-blue-50/90 p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer hover:bg-blue-100/90 hover:rotate-3">
+                <h2 class="text-2xl font-serif font-semibold text-blue-800 mb-4 text-center">Motivational Quote</h2>
+                <p id="quote" class="text-lg font-serif text-blue-700 italic text-center"></p>
             </div>
-            <div class="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <h2 class="text-2xl font-serif font-semibold text-gray-800 mb-4">Surprise Joke</h2>
-                <button id="jokeBtn" class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 font-serif">Get Joke</button>
-                <p id="joke" class="text-gray-600 mt-4 text-lg font-serif"></p>
+            <div class="section-clickable bg-green-50/90 p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer hover:bg-green-100/90 hover:rotate-3">
+                <h2 class="text-2xl font-serif font-semibold text-green-800 mb-4 text-center">Surprise Joke</h2>
+                <p id="joke" class="text-lg font-serif text-green-700 text-center"></p>
             </div>
-            <div class="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
-                <h2 class="text-2xl font-serif font-semibold text-gray-800 mb-4">Teacher's Song</h2>
-                <button id="songBtn" class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-all duration-300 font-serif">Play Song</button>
+            <div class="section-clickable bg-yellow-50/90 p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer hover:bg-yellow-100/90 hover:rotate-3">
+                <h2 class="text-2xl font-serif font-semibold text-yellow-800 mb-4 text-center">Teacher's Song</h2>
+                <p class="text-lg font-serif text-yellow-700 text-center">Click to Play</p>
                 <audio id="song" class="hidden"></audio>
             </div>
+            <div class="section-clickable bg-purple-50/90 p-6 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer hover:bg-purple-100/90 hover:rotate-3">
+                <h2 class="text-2xl font-serif font-semibold text-purple-800 mb-4 text-center">Surprise Album</h2>
+                <div id="album" class="flex justify-center space-x-4 flex-wrap"></div>
+            </div>
         </div>
-        <button onclick="window.location.href='index.html'" class="mt-10 bg-blue-600 text-white py-3 px-8 rounded-lg hover:bg-blue-700 transition-all duration-300 text-lg font-serif">Enter Contest</button>
+        <div class="text-center">
+            <button onclick="window.location.href='home.html'" class="bg-indigo-600 text-white py-4 px-10 rounded-full hover:bg-indigo-700 transition-all duration-300 font-serif text-lg shadow-xl hover:scale-105 animate-bounce-slow">Enter Contest</button>
+        </div>
     </div>
     <script src="welcome.js"></script>
 </body>

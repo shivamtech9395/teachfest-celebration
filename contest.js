@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { question: "A teacher gives 3 assignments weekly. How many assignments in 4 weeks?", options: ["9", "10", "12", "15"], answer: "12", difficulty: "Easy" },
         { question: "If a classroom has 4 rows with 5 desks each, how many desks are there?", options: ["15", "20", "25", "30"], answer: "20", difficulty: "Easy" },
         { question: "A teacher corrects 10 papers per hour. How many papers in 3 hours?", options: ["20", "25", "30", "35"], answer: "30", difficulty: "Easy" },
-        { question: "If a student reads 2 chapters daily, how many chapters in 5 days?", options: ["8", "10", "12", "14"], answer: "10", difficulty: "Easy" },
-        { question: "A school has 4 houses. Each house has 50 students. How many students in total?", options: ["150", "200", "250", "300"], answer: "200", difficulty: "Easy" },
+        { question: "If a student reads 2 chapters daily, how many chapters in 5 days?", options: ["8", "12", "10", "14"], answer: "10", difficulty: "Easy" },
+        { question: "A school has 4 houses. Each house has 50 students. How many students in total?", options: ["200", "150", "250", "300"], answer: "200", difficulty: "Easy" },
         { question: "If a teacher spends 15 minutes per lesson plan and makes 5 plans, how long does it take?", options: ["60 min", "75 min", "90 min", "100 min"], answer: "75 min", difficulty: "Easy" },
         { question: "If a class has 25 students and 5 are absent, how many are present?", options: ["18", "20", "22", "24"], answer: "20", difficulty: "Easy" },
         { question: "A teacher organizes 3 quizzes monthly. How many in a year?", options: ["30", "36", "42", "48"], answer: "36", difficulty: "Easy" },
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { question: "A teacher gives 2 marks per correct answer. How many marks for 10 correct answers?", options: ["15", "20", "25", "30"], answer: "20", difficulty: "Easy" },
         { question: "If a lesson lasts 45 minutes, how many lessons in 3 hours?", options: ["3", "4", "5", "6"], answer: "4", difficulty: "Easy" },
         { question: "A school library has 100 books. If 25 are borrowed, how many remain?", options: ["65", "70", "75", "80"], answer: "75", difficulty: "Easy" },
-        { question: "If a teacher assigns 4 projects per semester and there are 2 semesters, how many projects?", options: ["6", "8", "10", "12"], answer: "8", difficulty: "Easy" },
+        { question: "If a teacher assigns 4 projects per semester and there are 2 semesters, how many projects?", options: ["6", "12", "10", "8"], answer: "8", difficulty: "Easy" },
         { question: "A classroom has 6 windows. If each has 4 panes, how many panes in total?", options: ["18", "20", "24", "28"], answer: "24", difficulty: "Easy" },
         { question: "If a teacher grades 5 tests per hour, how many in 2 hours?", options: ["8", "10", "12", "15"], answer: "10", difficulty: "Easy" },
         { question: "A school event has 3 sessions, each 2 hours long. Total duration?", options: ["5 hr", "6 hr", "7 hr", "8 hr"], answer: "6 hr", difficulty: "Easy" },
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { question: "A teacher distributes 30 worksheets to 6 groups. How many per group?", options: ["4", "5", "6", "7"], answer: "5", difficulty: "Easy" },
         { question: "If a student finishes 2 assignments in 1 hour, how many in 3 hours?", options: ["4", "5", "6", "7"], answer: "6", difficulty: "Easy" },
         { question: "A school has 5 teachers, each teaching 4 classes. Total classes?", options: ["15", "20", "25", "30"], answer: "20", difficulty: "Easy" },
-        { question: "If a test has 10 questions and each is worth 2 marks, what’s the total?", options: ["15", "20", "25", "30"], answer: "20", difficulty: "Easy" },
+        { question: "If a test has 10 questions and each is worth 2 marks, what’s the total?", options: ["15", "25", "20", "30"], answer: "20", difficulty: "Easy" },
         { question: "A teacher spends 10 minutes per student for feedback. Time for 5 students?", options: ["40 min", "50 min", "60 min", "70 min"], answer: "50 min", difficulty: "Easy" },
         { question: "If a class has 30 students and 6 are girls, how many are boys?", options: ["22", "24", "26", "28"], answer: "24", difficulty: "Easy" },
         { question: "A school year has 9 months. If a teacher assigns 2 projects monthly, how many total?", options: ["16", "18", "20", "22"], answer: "18", difficulty: "Easy" },
@@ -207,6 +207,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('logoutBtn').addEventListener('click', () => {
         localStorage.removeItem('currentUser');
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     });
 });

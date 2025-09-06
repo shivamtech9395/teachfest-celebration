@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const quotes = [
         "A teacher plants the seeds of knowledge that grow forever.",
         "Teaching is the art of awakening the natural curiosity of young minds.",
+         "A teacher plants the seeds of knowledge that grow forever.",
+        "Teaching is the art of awakening the natural curiosity of young minds.",
         "A teacher's influence touches eternity; no one can tell where it stops.",
         "You light the path for future generations with every lesson you teach.",
         "The best teachers inspire students to become their best selves.",
@@ -98,8 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
         "Your guidance helps students find their true calling.",
         "A teacher’s love is the foundation of every dream.",
         "You make every student feel like they can change the world."
+        // Add 98 more quotes as per previou
     ];
     const jokes = [
+        "Why did the teacher wear sunglasses? Because her class was so bright!",
         "Why did the teacher wear sunglasses? Because her class was so bright!",
         "Why was the math book sad? It had too many problems!",
         "What’s a teacher’s favorite nation? Expla-nation!",
@@ -150,22 +154,59 @@ document.addEventListener('DOMContentLoaded', () => {
         "Why did the teacher bring a compass? To guide students in the right direction!",
         "What do you call a teacher who loves math? A number cruncher!",
         "Why did the teacher stay late? To grade the day’s success!"
+
+    ];
+    const images = [
+        "WhatsApp Image 2025-09-06 at 10.12.53_ba30cd68.jpg",
+        "WhatsApp Image 2025-09-06 at 10.12.51_c5c214ab.jpg",
+        "WhatsApp Image 2025-09-06 at 10.12.52_64ca996b.jpg",
+        "WhatsApp Image 2025-09-06 at 10.12.53_b9ff63b9.jpg", 
+        "WhatsApp Image 2025-09-06 at 10.12.53_fb6981c8.jpg",
+        "WhatsApp Image 2025-09-06 at 10.12.54_545403e6.jpg",
+        
+        // Add more image URLs for variety
+        ...Array(46).fill("WhatsApp Image 2025-09-06 at 10.12.53_ba30cd68.jpg")
     ];
 
-    document.getElementById('quote').textContent = quotes[Math.floor(Math.random() * quotes.length)];
-    document.getElementById('jokeBtn').addEventListener('click', () => {
-        document.getElementById('joke').textContent = jokes[Math.floor(Math.random() * jokes.length)];
-        document.getElementById('joke').classList.add('animate-slide-up');
-        setTimeout(() => document.getElementById('joke').classList.remove('animate-slide-up'), 800);
+    const quoteElement = document.getElementById('quote');
+    const jokeElement = document.getElementById('joke');
+    const albumElement = document.getElementById('album');
+    const song = document.getElementById('song');
+
+    document.querySelectorAll('.section-clickable').forEach(section => {
+        section.addEventListener('click', () => {
+            section.classList.add('animate-click');
+            setTimeout(() => section.classList.remove('animate-click'), 600);
+        });
     });
-    document.getElementById('songBtn').addEventListener('click', () => {
-        const audio = document.getElementById('song');
-        audio.src = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3';
-        audio.play();
-        setTimeout(() => audio.pause(), 30000);
+
+    quoteElement.parentElement.addEventListener('click', () => {
+        quoteElement.textContent = quotes[Math.floor(Math.random() * quotes.length)];
     });
+
+    jokeElement.parentElement.addEventListener('click', () => {
+        jokeElement.textContent = jokes[Math.floor(Math.random() * jokes.length)];
+    });
+
+    albumElement.parentElement.addEventListener('click', () => {
+        albumElement.innerHTML = '';
+        const randomImages = images.sort(() => Math.random() - 0.5).slice(0, 3);
+        randomImages.forEach((imgSrc, index) => {
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.classList.add('w-24', 'h-24', 'rounded-full', 'shadow-lg', 'animate-album-spin', `delay-${index * 100}`);
+            albumElement.appendChild(img);
+        });
+    });
+
+    song.parentElement.addEventListener('click', () => {
+        song.src = 'Maheroo_maheroo_lofi_remix___lyrics_textaudio____Slowed_and_reverb____tranding_audiotext__(128k).mp3';
+        song.play();
+        setTimeout(() => song.pause(), 60000);
+    });
+
     document.getElementById('logoutBtn').addEventListener('click', () => {
         localStorage.removeItem('currentUser');
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     });
 });

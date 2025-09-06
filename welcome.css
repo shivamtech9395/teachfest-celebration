@@ -2,14 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+@keyframes bg-pulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
-@keyframes slide-up {
+@keyframes fade-in {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-.animate-pulse { animation: pulse 1.5s infinite; }
-.animate-slide-up { animation: slide-up 0.8s ease-out; }
+@keyframes click-effect {
+    0% { transform: scale(1); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    50% { transform: scale(1.05); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+    100% { transform: scale(1); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+}
+@keyframes album-spin {
+    from { opacity: 0; transform: rotate(360deg) scale(0.8); }
+    to { opacity: 1; transform: rotate(0) scale(1); }
+}
+@keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+@keyframes fade-in-delay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.animate-bg-pulse { animation: bg-pulse 15s ease infinite; background-size: 200% 200%; }
+.animate-fade-in { animation: fade-in 1s ease-out; }
+.animate-click { animation: click-effect 0.6s ease-out; }
+.animate-album-spin { animation: album-spin 0.6s ease-out; }
+.animate-bounce-slow { animation: bounce-slow 3s infinite; }
+.animate-fade-in-delay { animation: fade-in-delay 1.5s ease-out 1s forwards; opacity: 0; }
+.section-clickable { cursor: pointer; }
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
