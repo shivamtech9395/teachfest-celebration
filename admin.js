@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const user = JSON.parse(localStorage.getItem('currentUser'));
-    if (!user || user.userType !== 'shivam') {
+    if (!user || user.userType !== 'admin') {
         window.location.href = 'index.html';
     }
     const results = JSON.parse(localStorage.getItem('contestResults') || '{}');
